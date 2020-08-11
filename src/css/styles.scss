@@ -1,0 +1,860 @@
+$melonColor: #d09d31;
+
+@mixin dot {
+  display: inline;
+  position: relative;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -80px;
+    top: 0;
+    width: 55px;
+    height: 55px;
+    background-color: #d09d31;
+    border-radius: 50%;
+  }
+}
+@mixin underline {
+  width: max-content;
+  margin: 0 auto;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $melonColor;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+@mixin card {
+  position: relative;  
+  width: 320px;
+  height: 425px;
+  border-radius: 8px;
+  color: #ffffff;
+  &Content {
+    position: relative;
+    z-index: 1;
+    width: 320px;
+    height: 425px;
+    padding: 35px 25px 30px 25px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.19);
+    opacity: 1;
+    border-radius: 8px;
+  }
+  &Frame {
+    position: absolute;
+    width: 320px;
+    height: 425px;
+    z-index: -1;  
+    border-radius: 8px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.19);
+    border: solid 3px #501b12;
+  }
+}
+//container 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+//absolute 
+.absolute {
+  position: absolute;
+  z-index: -1;
+}
+
+//img
+.img {
+  &--blog {
+    object-fit: cover;
+  }
+}
+
+//button
+.button {
+  width: 203.9px;
+  height: 45px;
+  border-radius: 7px;
+  background-color: $melonColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat-Bold';
+  color: #ffffff;
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &--header {
+    span {
+      font-family: 'Montserrat-Medium';
+    }
+  }
+  &-white {
+    background-color: transparent;
+    border: 2px solid;
+  }
+  &--catalog {
+    width: 98px;
+  }
+  &--transparent {
+    color: #000000;
+    background-color: transparent;  
+    border-radius: 8px;
+    border: solid 3px $melonColor;
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+//title
+.title {
+  &--hero {
+    color: #ffffff;
+    font-family: 'Georgia-Bold';
+    font-size: 52px;
+    line-height: 58px;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      font-family: 'Georgia-Bold';
+      text-transform: lowercase;
+    }
+  }
+  &--teaser {
+    font-family: 'Georgia-Bold';
+    font-size: 36px;
+  }
+  &--section {
+    font-family: 'Montserrat-Bold';
+    font-size: 42px;
+    line-height: 1.38;
+    &Blog {
+      color: #ffffff;
+    }
+  }
+  &--dot {
+    @include dot;
+  }
+  &--dotTop {
+    @include dot;
+    &::before {
+      top: -25px;
+    }
+  }
+  &--member {
+    font-family: 'Montserrat-Bold';
+    font-size: 22px;
+  }
+  &--block {
+    font-family: 'Montserrat-Bold';
+    font-size: 32px;
+  }
+  &--line {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 65px;
+      height: 2px;
+      background-color: $melonColor;
+      margin-right: 15px;
+    }
+  }
+  &--lecture {
+    &Teaser {
+      font-family: 'Montserrat-Black';
+      font-size: 47px;
+    }
+  }
+  &--teaser {
+    &Block {
+      font-family: 'Montserrat-Bold';
+      font-size: 98px;
+    }
+    &Subtitle {
+      font-family: 'Montserrat-Bold';
+      font-size: 29px;
+      line-height: 1.21;
+      letter-spacing: 0.6px;
+    }
+  }
+  &--visit {
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 60px;
+    &Subtitle {
+      font-family: 'Montserrat-Medium';
+      font-size: 44px;
+    }
+  }
+  &--blog {
+    font-family: 'Montserrat-Bold';
+    font-size: 24px;
+    color: #484848;
+  }
+  &--footer {
+    font-family: 'Arial-BoldMT';
+    font-size: 23px;
+    text-transform: uppercase;
+    &Menu {
+      font-family: 'Montserrat-Bold';
+      color: $melonColor;
+    }
+  }
+}
+
+//text 
+.text {
+  &--bold {
+    font-family: 'Montserrat-Bold';
+  }
+  &--label {
+    text-transform: uppercase;  
+    font-family: 'Arial-BoldMT';
+    font-size: 23px;
+  }
+  &--teaser {
+    font-family: 'Georgia-Bold';
+    &Block {
+      font-size: 22px;
+    }
+  }
+  &--member {
+    font-family: 'Montserrat-Regular';
+    font-size: 15px;
+  }
+  &--dots {
+      @include dot;
+      font-size: 18px;
+      line-height: 29px;
+      &:before {
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        left: -20px;
+      }
+  }
+  &--subtitle {
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+  }
+  &--catalog {
+    &Name {
+      font-family: 'Montserrat-ExtraBold';
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+      text-decoration: underline;
+      font-size: 24px;
+    }
+  }
+  &--stat {
+    &Title {
+      font-family: 'Montserrat-Medium';
+      font-size: 14px;
+    }
+    &Price {
+      font-family: 'Montserrat-ExtraBold';
+      font-size: 30px;
+      color: $melonColor;
+    }
+    &Length {
+      font-family: 'Montserrat-ExtraBold';
+      font-size: 20px;
+    }
+  }
+  &--lecture {
+    font-size: 22px;
+  }
+  &--lecture {
+    &Teaser {
+      font-family: 'Montserrat-Medium';
+      font-size: 42px;
+    }
+  }
+  &--mission {
+    font-size: 22px;
+    span {
+      display: inline-block;
+    }
+    &:last-child {
+      padding: 35px 0 80px 0;
+    }
+  }
+  &--blog {
+    font-size: 18px;
+    color: #545454;
+  }
+  &--footer {
+    font-family: 'Montserrat-Light';
+    font-size: 14px;
+  }
+}
+
+
+//header
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  color: #ffffff;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 55px;
+  &__icon {
+    width: 60px;
+  }
+  &__label {
+    padding-left: 10px;
+  }
+  &__menu {
+    display: flex;
+    padding-left: 150px;
+  }
+  &__link {
+    padding-left: 35px;
+  }
+  &__phone {
+    padding-left: 100px;
+  }
+  &__button {
+    padding-left: 50px;
+  }
+}
+
+//section
+.section {
+  position: relative;
+  &__online {
+    height: 1000px;
+  }
+  &__join {
+    padding-top: 350px;
+  }
+  &__about {
+    padding-top: 370px;
+  }
+  &__catalog {
+    padding-top: 190px;
+  }
+  &__title {
+    &--member {
+      width: 822px;
+      height: 116px;
+    }
+    &--join {
+      width: 525px;
+    }
+    &--advantages {
+      padding-top: 55px;
+    }
+    &--lecture {
+    }
+  }
+}
+
+//link
+.link {
+  &--header_top {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Montserrat-Medium';
+  }
+  &--header_phone {
+    color: #ffffff;
+    font-family: 'Montserrat-Bold';
+  }
+  &-member {
+    font-family: 'Montserrat-Light';
+  }
+  &--footer {
+    &Menu {
+      font-family: 'Montserrat-Bold';
+    }
+  }
+}
+
+//online
+.online {
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  padding-left: 40px;
+  &__pic {
+    top: 0;
+  }
+  &__content {
+    padding-top: 290px;
+  }
+  &__text {
+    padding-top: 25px;
+    width: 490px;
+    font-family: 'Montserrat-Regular';
+    font-size: 22px;
+    line-height: 1.36;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 455px;
+    padding-top: 50px;
+  }
+  &__teasers {
+    display: flex;
+    justify-content: space-between;
+    width: 760px;
+    padding-top: 90px;
+  }
+  &__teaser {
+    display: flex;
+    align-items: baseline;
+  }
+  &__ghost {
+    &Vertical {
+      right: 0;
+      top: 520px;
+    }
+    &Horizontal {
+      right: 340px;
+      top: 790px;
+    }
+  }
+} 
+
+//member
+.member {
+  &__list {
+    .slick-slide {
+      width: 265px;
+      margin: 10px 15px;
+    }
+  }
+  &__item {
+    height: 393px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.19);
+  }
+  &__content {
+    padding: 50px 10px 30px 10px;
+    text-align: center;
+  }
+  &__text {
+    padding: 15px 0 45px 0;
+  }
+  &__link {
+    @include underline;
+  }
+}
+
+//join
+.join {
+  &__pic {
+    top: 75px;
+    right: 0;
+  }
+  &__content {
+    padding-top: 20px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    padding-top: 40px;
+  }
+}
+
+//about
+.about {
+  padding-left: 580px;
+  &__pic {
+    top: 100px;
+    left: 0;
+  }
+  &__content {
+    padding-top: 15px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    span {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 29px;
+    }
+  }
+  &__button {
+    padding-top: 40px;
+  }
+}
+
+//catalog
+.catalog {
+  &__pic {
+    right: 0;
+    top: -150px;
+  }
+  &__row {
+    display: flex;    
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #501B12; 
+    opacity: 0.6; 
+    border-radius: 8px;
+  }
+  &__item {  
+    @include card;
+  }
+  &__param {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 55px;
+  }
+  &__new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 28px;
+    border-radius: 17.5px;
+    background-color: #d73f00;
+    span {
+      font-family: 'Montserrat-Medium';
+    }
+  }
+  &__view {
+    font-family: 'Montserrat-Medium';
+    span {
+      display: inline;
+      font-size: 18px;
+    }
+  }
+  &__descr {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 40px 0;
+  }
+  &__price {
+    &Pic {
+      width: 22px;
+    }
+  }
+  &__length {
+    &Pic {
+      width: 22px;
+    }
+  }
+  &__stat {
+    &Title {
+      padding-top: 10px;
+    }
+    &Length {
+      margin-top: 5px;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+  &__link { 
+      @include underline;
+      padding-top: 10px;
+  }
+  &__buttonElse {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
+}
+.firstCard {
+  background-image: url(/img/firstFrame.png);
+  .catalog__itemFrame {
+    top: 10px;
+    right: 10px;
+  }
+}
+.secondCard {
+  background-image: url(/img/secondFrame.png);
+  .catalog__itemFrame {
+    bottom: 10px;
+    left: 10px;
+  }
+}
+.thirdCard {
+  background-image: url(/img/thirdFrame.png);
+  .catalog__itemFrame {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+//lecture
+.lecture {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 230px;
+  &__pic {
+    top: 0;
+  }
+  &__text {
+    width: 550px;
+  }
+  &__block {
+    &Raise {
+      padding: 55px 0 45px 0;
+      .lecture__text {
+        padding-left: 80px;
+      }
+    }
+  }
+  &__teasers {
+    position: absolute;
+    right: 0;
+    top: 120px;
+  }
+  &__teaser { 
+    position: relative; 
+    width: 483px;
+    height: 199px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: bottom;
+    &First {
+      margin: 0 0 25px 140px;
+      background-image: url(/img/lection--first.png);
+    }
+    &Second {
+      margin: 0 0 25px 70px;
+      background-image: url(/img/lection--second.png);
+    }
+    &Third {
+      background-image: url(/img/lection--third.png);
+    }
+    &Text {
+      padding-left: 25px;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.3;
+    background: linear-gradient(to right, #021f29, #501b12);
+    border-radius: 8px;
+    z-index: 1;
+  }
+  &__box {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0 0 20px;
+    width: 483px;
+    height: 199px;
+    opacity: 1;
+    border-radius: 8px;
+    color: #ffffff;
+  }
+  &__shadow {  
+    position: absolute;
+    z-index: -1; 
+    width: 483px;
+    height: 199px;
+    opacity: 0.3;
+    border-radius: 14px;
+    background: linear-gradient(to right, #021f29, #501b12);
+    top: 10px;
+    left: 10px;
+  }
+}
+
+//mission
+.mission {
+  position: relative;
+  display: flex;
+  padding-top: 455px;
+  &__content {
+    width: 580px;
+  }
+  &__pic {
+    position: absolute;
+    left: 650px;
+    top: 336px;
+    width: 760px;
+  }
+}
+
+//teaser 
+.teaser {
+  padding-top: 115px;
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    width: 330px;
+    &:last-child {
+      width: 225px;
+      margin-right: 120px;
+    }
+  }
+  &__subtitle {
+    padding-bottom: 10px;
+  }
+}
+
+//visit 
+.visit {
+  display: flex;
+  padding-top: 225px;
+  &__item {
+    @include card;
+    &.secondCard {
+      margin-left: 30px;
+      .catalog__itemFrame {
+        border: 3px solid hsla(0, 0%, 100%, 0.6);
+      }
+    }
+  }
+  &__descr {
+    color: #ffffff;
+    padding-left: 50px;
+  }
+  &__title {
+    padding-bottom: 50px;
+  }
+  &__pic {
+    top: 60px;
+    right: 0;
+    z-index: -2;
+  }
+}
+
+//blog 
+.blog {
+  padding-top: 445px;
+  &__slider {
+  }
+  &__item {
+    /* width: 498px!important; */
+    height: 444px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 34px 0 rgba(0, 0, 0, 0.16);
+  }
+  &__box {
+    padding: 15px 30px 25px 30px;
+    background: #ffffff;
+  }
+  &__pic {  
+    width: 498px;
+    height: 295px;
+    background-size: cover;
+  }
+  &__text {
+    padding: 6px 0 12px 0;
+  }
+  &__link {
+    a {
+      @include underline;
+      display: block;
+      margin: unset;
+      font-family: 'Montserrat-Medium';
+    }
+  }
+  &__slider {
+    padding-top: 35px;
+    max-width: 1080px;
+    margin: 0 auto 30px auto;
+    .slick-dots li button::before {
+      font-size: 16px;
+      color: #fff;
+      opacity: 1;
+    }
+    .slick-dots li.slick-active button::before {
+      color: $melonColor;
+    }
+    .slick-slide {
+      width: 498px;
+      margin: 0 40px;
+      padding: 15px;
+    }
+  }
+  &__button {
+    a {
+      margin: 45px auto 0;
+      color: #ffffff;
+    }
+  }
+}
+
+//footer
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 114px 0 80px 0;
+  color: #ffffff;
+  &__pic {
+    bottom: 0;
+  }
+  &__social {
+    width: 370px;
+  }
+  &__logo {
+    width: 105px;
+    height: 65px;
+  }
+  &__title {
+    padding: 10px 0 20px 0;
+  }
+  &__icons {
+    display: flex;
+    padding-top: 10px;
+  }
+  &__icon {
+    width: 41px;
+    height: 41px;
+    margin-right: 17px;
+  }
+  &__button {
+    a {
+      color: #ffffff;
+    }
+  }
+  &__menu {
+    font-size: 18px;
+    &Title {
+      padding-bottom: 40px;
+    }
+  }
+  &__item {
+    padding-bottom: 20px;
+  }
+  &__contact {
+    margin-right: 130px;
+  }
+}
+
+header.background--light {
+  color: black;
+}
+
+header.background--dark {
+  color: white;
+}
+
+header.background--complex {
+  color: gray;
+}
