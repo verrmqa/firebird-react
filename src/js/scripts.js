@@ -1,6 +1,6 @@
 
 import $ from 'jquery'; 
-
+if(document) {
 document.addEventListener("DOMContentLoaded", () => {
 
  /*  $(".member__slider").slick({
@@ -56,3 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //конец условия загрузки документа
 })
+  
+}
