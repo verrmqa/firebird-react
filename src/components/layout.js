@@ -21,9 +21,6 @@ import "../css/normalize.css"
 import "../css/styles.css"
 
 
-import $ from 'jquery'; 
-import Slider from "react-slick";
-import "../js/slick/slick.js"
 import "../js/scripts.js"
 
 const Layout = ({ children }) => {

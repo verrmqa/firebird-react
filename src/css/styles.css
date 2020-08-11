@@ -1021,6 +1021,7 @@ header {
 
 .blog__slider .slick-slide {
   width: 498px;
+  height: 250px;
   margin: 0 40px;
   padding: 15px;
 }

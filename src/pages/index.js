@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SliderBlog from "../components/sliderBlog"
 
 const IndexPage = () => (
   <Layout>
@@ -600,7 +601,7 @@ const IndexPage = () => (
 <section className="section section__blog">
   <div className="container">
     <div className="blog">
-      <div className="section__title section__title--blog">
+      {/* <div className="section__title section__title--blog">
         <p className="title title--section title--sectionBlog">Blog</p>
       </div>
       <div className="blog__slider">
@@ -723,7 +724,8 @@ const IndexPage = () => (
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <SliderBlog></SliderBlog>
       <div className="blog__button">
         <a href="" className="button button--transparent">Show else</a>
       </div>

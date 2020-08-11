@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  $(".member__slider").slick({
+ /*  $(".member__slider").slick({
     // normal options...
     slidesToShow: 4,
     infinite: true,
@@ -22,13 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     infinite: true,
     variableWidth: true,
     arrows: true,
-    appendArrows: ".slider-arrows_staff",
     dots: true,
-    prevArrow:
-      '<span class="slider-arrow slick-prev"><img src="./img/arrow_left.svg"></span>',
-    nextArrow:
-      '<span class="slider-arrow slick-next"><img src="./img/arrow_right.svg"></span>'
-  });
+  }); */
 		
 
   document.addEventListener("scroll", () => {

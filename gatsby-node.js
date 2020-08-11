@@ -5,3 +5,21 @@
  */
 
 // You can delete this file if you're not using it
+
+
+//"window" fix for netlify
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+//"window" fix for netlify END 

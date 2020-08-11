@@ -745,8 +745,6 @@ header {
 //blog 
 .blog {
   padding-top: 445px;
-  &__slider {
-  }
   &__item {
     /* width: 498px!important; */
     height: 444px;
@@ -788,6 +786,7 @@ header {
     }
     .slick-slide {
       width: 498px;
+      height: 250px;
       margin: 0 40px;
       padding: 15px;
     }
